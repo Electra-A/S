@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function rain(){
+            let amount = 300;
+            let body = document.querySelector('body');
+            let i = 0
+            while(i < amount){
+                let drop = document.createElement('i');
+                
+                let size = Math.random() * 5;
+                let posX = Math.floor(Math.random() * window.innerWidth);
+                let delay = Math.random() * -20;
+                let duration = Math.random() * 5;
+                
+                
+                drop.style.width = 0.2 + size+'px';
+                drop.style.left = posX + 'px';
+                drop.style.animationDelay = delay+'s';
+                drop.style.animationDuration = 1 + duration+'s';
+                body.appendChild(drop);
+                i++
+            } 
+        }
+        rain();
+        </script>
+        <audio class="audio" autoplay controls loop  src="music.mp3"></audio>
+    <div class="navigation">
+        <div class="userBx">
+            <div class="imgBx">
+                <img src="me1.jpg">
+            </div>
+            <p class="username">Anastasia</p>
+        </div>
+        <div class="menuToggle"></div>
+        <ul class="menu">
+            <li><a href="html.html" target="_blank"><ion-icon class="icon" name="people-outline"></ion-icon>My Phrofile</a></li>
+             <li><a href="#"><ion-icon class="icon1" name="chatbubbles-outline"></ion-icon>Message</a></li>  
+             <li><a href="#"><ion-icon class="icon2" name="notifications-outline"></ion-icon>Notification</a></li>                
+             <li><a href="#"><ion-icon class="icon" name="settings-outline"></ion-icon>Settings</a></li>  
+             <li><a href="#"><ion-icon class="icon1" name="help-outline"></ion-icon>Help & Support</a></li>  
+             <li><a href="#"><ion-icon class="icon2" name="log-out-outline"></ion-icon>Logout</a></li>  
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let menuToggle = document.querySelector('.menuToggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick = function(){
+            navigation.classList.toggle('active')  
+        }
+    </script>
+</body>
+</html>
